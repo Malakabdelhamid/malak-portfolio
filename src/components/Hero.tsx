@@ -11,12 +11,8 @@ const Hero = () => {
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
               <span className="gradient-text">Malak AbdElHamid</span>
             </h1>
-            <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 text-lg sm:text-xl text-muted-foreground font-medium">
-              <span>AI Enthusiast</span>
-              <span className="w-1 h-1 bg-primary rounded-full"></span>
-              <span>Data Explorer</span>
-              <span className="w-1 h-1 bg-primary rounded-full"></span>
-              <span>Problem Solver</span>
+            <div className="text-lg sm:text-xl text-muted-foreground font-medium">
+              <span>AI Engineer</span>
             </div>
           </div>
 
