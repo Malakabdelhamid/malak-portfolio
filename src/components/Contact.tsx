@@ -74,7 +74,7 @@ const Contact = () => {
             <div className="space-y-6">
               {/* Email card */}
               <a href={mailtoHref}>
-                <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group cursor-pointer">
+                <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group">
                   <div className="flex items-center space-x-4">
                     <div className="p-3 bg-primary-soft rounded-lg group-hover:scale-110 transition-transform">
                       <Mail className="w-6 h-6 text-primary" />
@@ -95,7 +95,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group cursor-pointer">
+                <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group">
                   <div className="flex items-center space-x-4">
                     <div className="p-3 bg-accent rounded-lg group-hover:scale-110 transition-transform">
                       <Linkedin className="w-6 h-6 text-accent-foreground" />
@@ -116,7 +116,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group cursor-pointer">
+                <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group">
                   <div className="flex items-center space-x-4">
                     <div className="p-3 bg-primary-soft rounded-lg group-hover:scale-110 transition-transform">
                       <Github className="w-6 h-6 text-primary" />
