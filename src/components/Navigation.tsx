@@ -92,7 +92,7 @@ const Navigation = () => {
                 size="sm" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground w-full mt-4"
               >
-                <a href="Malakabdelhamid/malak-portfolio/public/Resume_Malak_Mohamed.pdf" download= "Malakabdelhamid/malak-portfolio/public/Resume_Malak_Mohamed.pdf">
+                <a href="/Resume_Malak_Mohamed.pdf" download= "Resume_Malak_Mohamed.pdf">
                   <Download className="w-4 h-4 mr-2" />
                   Download Resume
                 </a>
