@@ -25,7 +25,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg font-medium group"
+              className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg font-medium group"
             >
               <a href="/Resume_Malak_Mohamed.pdf" download='Resume_Malak_Mohamed.pdf'>
                 <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />

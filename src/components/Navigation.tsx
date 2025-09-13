@@ -56,8 +56,8 @@ const Navigation = () => {
               </button>
             ))}
             <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground ml-4"
+              size="sm" 
+              className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground ml-4"
             >
               <a href="/Resume_Malak_Mohamed.pdf" download='Resume_Malak_Mohamed.pdf'>
                 <Download className="w-4 h-4 mr-2" />
