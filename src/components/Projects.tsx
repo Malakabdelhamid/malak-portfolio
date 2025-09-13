@@ -6,45 +6,50 @@ import { useState } from "react";
 
 const Projects = () => {
   const [filter, setFilter] = useState("All");
-  
+
+  // NOTE:
+  // - Put 1.jpg, eg.jpg, gloves.jpg, vision.mp4, gloves.mp4 in project-root/public
+  // - Then reference them as /1.jpg, /eg.jpg, /gloves.jpg, /vision.mp4, /gloves.mp4 [1]
   const projects = [
     {
       title: "VisionWalk",
-      description: "AI-powered pedestrian detection system using computer vision to enhance urban safety and traffic management.",
+      description:
+        "AI-powered pedestrian detection system using computer vision to enhance urban safety and traffic management.",
       category: "AI",
       tech: ["Python", "TensorFlow", "OpenCV", "Computer Vision"],
       image: "/1.jpg",
-      github: "#",
-      demo: "/vision.mp4",
-      featured: true
+      github: "#", 
+      demo: "/vision.mp4", 
+      featured: true,
     },
     {
       title: "EgGuide",
-      description: "VR-based tourism platform showcasing Egyptian landmarks with immersive virtual reality experiences.",
+      description:
+        "VR-based tourism platform showcasing Egyptian landmarks with immersive virtual reality experiences.",
       category: "VR",
       tech: ["Unity", "C#", "VR", "3D Modeling"],
       image: "/eg.jpg",
       github: "#",
-      demo: "#",
-      featured: true
+      demo: "#", 
+      featured: true,
     },
     {
       title: "Sign Language Translator",
-      description: "Smart gloves powered by IoT and machine learning that translate sign language into text, bridging communication for the deaf and dumb community.",
+      description:
+        "Smart gloves powered by IoT and machine learning that translate sign language into text, bridging communication for the deaf and dumb community.",
       category: "IoT",
       tech: ["Machine Learning", "RandomForest", "Flutter", "ESP32", "Flex Sensors", "Heroku"],
       image: "/gloves.jpg",
       github: "#",
       demo: "/gloves.mp4",
-      featured: true
+      featured: true,
     },
   ];
 
   const categories = ["All", "AI", "VR", "IoT"];
-  
-  const filteredProjects = filter === "All" 
-    ? projects 
-    : projects.filter(project => project.category === filter);
+
+  const filteredProjects =
+    filter === "All" ? projects : projects.filter((project) => project.category === filter);
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-soft">
@@ -65,9 +70,10 @@ const Projects = () => {
               key={category}
               variant={filter === category ? "default" : "outline"}
               onClick={() => setFilter(category)}
-              className={filter === category 
-                ? "bg-primary text-primary-foreground hover:bg-primary/90" 
-                : "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              className={
+                filter === category
+                  ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                  : "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
               }
             >
               {category}
@@ -77,20 +83,27 @@ const Projects = () => {
 
         {/* Projects grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <Card 
-              key={project.title} 
+          {filteredProjects.map((project) => (
+            <Card
+              key={project.title}
               className={`overflow-hidden hover-lift bg-gradient-card border-0 shadow-soft group ${
-                project.featured ? 'md:col-span-2 lg:col-span-1' : ''
+                project.featured ? "md:col-span-2 lg:col-span-1" : ""
               }`}
             >
-              {/* Project image */}
+              {/* Project visual header (placeholder block).
+                 If you want to show the actual image, swap the placeholder with an <img /> or next/image. */}
               <div className="relative overflow-hidden bg-muted h-48">
+                {/* Example if you want to render actual image (uncomment and ensure file is in public/):
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                */}
                 <div className="absolute inset-0 bg-gradient-hero opacity-20"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-primary font-semibold text-lg">
-                    {project.title}
-                  </div>
+                  <div className="text-primary font-semibold text-lg">{project.title}</div>
                 </div>
                 {project.featured && (
                   <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground">
@@ -119,22 +132,37 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {/* Action buttons */}
+                {/* Action buttons (real links using asChild) */}
                 <div className="flex space-x-3 pt-2">
-                  <Button 
-                    size="sm" 
+                  <Button
+                    asChild
+                    size="sm"
                     variant="outline"
                     className="border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-1"
                   >
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
+                    <a
+                      href={project.github || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      Code
+                    </a>
                   </Button>
-                  <Button 
+
+                  <Button
+                    asChild
                     size="sm"
                     className="bg-primary hover:bg-primary/90 text-primary-foreground flex-1"
                   >
-                    <Eye className="w-4 h-4 mr-2" />
-                    Demo
+                    <a
+                      href={project.demo || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Eye className="w-4 h-4 mr-2" />
+                      Demo
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -151,7 +179,8 @@ const Projects = () => {
             <p className="text-muted-foreground mb-6 max-w-md">
               I'm always excited to work on innovative projects that make a positive impact.
             </p>
-            <Button 
+            <Button
+              asChild
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
             >
