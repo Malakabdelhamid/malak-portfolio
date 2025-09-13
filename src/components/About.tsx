@@ -20,15 +20,20 @@ const About = () => {
           <div className="space-y-6">
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed">
-                I'm an AI student and enthusiast with a passion for exploring the intersection of 
-                technology and real-world impact. My journey combines academic learning with 
-                hands-on project management and data analysis experience.
+                AI student and ML developer passionate about end-to-end workflows—from data preparation 
+                and exploratory analysis to baseline modeling and thorough evaluation. I have a growing 
+                interest in advancing my expertise in AI.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                I believe in the power of artificial intelligence and data science to solve 
-                complex problems and create meaningful change. Whether it's developing computer 
-                vision systems, analyzing datasets, or managing innovative projects, I'm driven 
-                by curiosity and the desire to make a difference.
+                Currently, I am part of the DEPI national ML internship and have undergone comprehensive 
+                training in core machine learning, deep learning fundamentals, and modern AI techniques. 
+                My core skills include Python, data cleaning, exploratory data analysis, and building 
+                scikit-learn pipelines.
+              </p>
+              <p className="text-lg text-foreground/80 leading-relaxed">
+                I pride myself on clear and honest communication, adhering to conservative timelines, 
+                delivering well-documented, tidy notebooks, and being consistently open to feedback 
+                for continuous improvement.
               </p>
             </div>
 
@@ -50,12 +55,12 @@ const About = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-foreground mb-1">
-                    AI Student
+                    DEPI ML Internship
                   </h3>
                   <p className="text-muted-foreground mb-2">Current</p>
                   <p className="text-sm text-foreground/70">
-                    Pursuing advanced studies in artificial intelligence, machine learning, 
-                    and data science with focus on practical applications.
+                    Part of the national ML internship program with comprehensive training 
+                    in machine learning, deep learning fundamentals, and modern AI techniques.
                   </p>
                 </div>
               </div>
@@ -68,12 +73,12 @@ const About = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-foreground mb-1">
-                    Project Manager & Data Analyst
+                    Technical Skills
                   </h3>
-                  <p className="text-muted-foreground mb-2">Professional Experience</p>
+                  <p className="text-muted-foreground mb-2">Core Competencies</p>
                   <p className="text-sm text-foreground/70">
-                    Leading innovative projects and analyzing complex datasets to drive 
-                    informed decision-making and strategic planning.
+                    Python programming, data cleaning, exploratory data analysis, 
+                    and building robust scikit-learn pipelines for ML projects.
                   </p>
                 </div>
               </div>
@@ -86,12 +91,12 @@ const About = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-foreground mb-1">
-                    Passionate Innovator
+                    Professional Approach
                   </h3>
-                  <p className="text-muted-foreground mb-2">Always</p>
+                  <p className="text-muted-foreground mb-2">Work Ethics</p>
                   <p className="text-sm text-foreground/70">
-                    Committed to continuous learning, creative problem-solving, 
-                    and building technology that makes a positive impact.
+                    Clear communication, conservative timelines, well-documented notebooks, 
+                    and consistently open to feedback for continuous improvement.
                   </p>
                 </div>
               </div>
