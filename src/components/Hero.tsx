@@ -26,10 +26,11 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg font-medium group"
-              onClick={() => window.open('Malakabdelhamid/malak-portfolio/public/Resume_Malak_Mohamed.pdf', '_blank')}
             >
-              <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-              Download Resume
+              <a href="/Resume_Malak_Mohamed.pdf" download='Resume_Malak_Mohamed.pdf'>
+                <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+                Download Resume
+              </a>
             </Button>
             <Button 
               variant="outline" 
