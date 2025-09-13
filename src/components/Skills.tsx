@@ -31,8 +31,8 @@ const Skills = () => {
     { name: "Communication", icon: MessageCircle, color: "primary" },
     { name: "Teamwork", icon: Users, color: "accent" },
     { name: "Fast Learner", icon: Zap, color: "primary" },
-    { name: "Flexible and adaptable", icon: Shuffle, color: "primary" },
     { name: "Leadership", icon: Crown, color: "accent" },
+    { name: "Flexible and adaptable", icon: Shuffle, color: "primary" },
   ];
 
   return (
