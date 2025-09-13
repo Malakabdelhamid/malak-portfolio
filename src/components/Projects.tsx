@@ -7,9 +7,7 @@ import { useState } from "react";
 const Projects = () => {
   const [filter, setFilter] = useState("All");
 
-  // NOTE:
-  // - Put 1.jpg, eg.jpg, gloves.jpg, vision.mp4, gloves.mp4 in project-root/public
-  // - Then reference them as /1.jpg, /eg.jpg, /gloves.jpg, /vision.mp4, /gloves.mp4 [1]
+  // Place these files in project-root/public and reference with a leading slash. [1]
   const projects = [
     {
       title: "VisionWalk",
@@ -17,9 +15,9 @@ const Projects = () => {
         "AI-powered pedestrian detection system using computer vision to enhance urban safety and traffic management.",
       category: "AI",
       tech: ["Python", "TensorFlow", "OpenCV", "Computer Vision"],
-      image: "public/1.jpg",
-      github: "", 
-      demo: "/vision.mp4", 
+      image: "/1.jpg",          // ✅ correct (served from public) [1][2]
+      github: "",               // empty => hide Code button
+      demo: "/vision.mp4",      // in public or use external URL
       featured: true,
     },
     {
@@ -28,9 +26,9 @@ const Projects = () => {
         "VR-based tourism platform showcasing Egyptian landmarks with immersive virtual reality experiences.",
       category: "VR",
       tech: ["Unity", "C#", "VR", "3D Modeling"],
-      image: "public/eg.jpg",
-      github: "",
-      demo: "", 
+      image: "/eg.jpg",         // ✅
+      github: "",               // empty => hide Code button
+      demo: "",                 // empty => hide Demo button
       featured: true,
     },
     {
@@ -39,17 +37,16 @@ const Projects = () => {
         "Smart gloves powered by IoT and machine learning that translate sign language into text, bridging communication for the deaf and dumb community.",
       category: "IoT",
       tech: ["Machine Learning", "RandomForest", "Flutter", "ESP32", "Flex Sensors", "Heroku"],
-      image: "public/gloves.jpg",
-      github: "",
-      demo: "/gloves.mp4",
+      image: "/gloves.jpg",     // ✅
+      github: "",               // empty => hide Code button
+      demo: "/gloves.mp4",      // ✅
       featured: true,
     },
   ];
 
   const categories = ["All", "AI", "VR", "IoT"];
-
   const filteredProjects =
-    filter === "All" ? projects : projects.filter((project) => project.category === filter);
+    filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-soft">
@@ -83,91 +80,101 @@ const Projects = () => {
 
         {/* Projects grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <Card
-              key={project.title}
-              className={`overflow-hidden hover-lift bg-gradient-card border-0 shadow-soft group ${
-                project.featured ? "md:col-span-2 lg:col-span-1" : ""
-              }`}
-            >
-              {/* Project visual header (placeholder block).
-                 If you want to show the actual image, swap the placeholder with an <img /> or next/image. */}
-              <div className="relative overflow-hidden bg-muted h-48">
-                {/* Example if you want to render actual image (uncomment and ensure file is in public/):
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-                */}
-                <div className="absolute inset-0 bg-gradient-hero opacity-20"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-primary font-semibold text-lg">{project.title}</div>
-                </div>
-                {project.featured && (
-                  <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground">
-                    Featured
-                  </Badge>
-                )}
-              </div>
-
-              {/* Project content */}
-              <div className="p-6 space-y-4">
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Tech stack */}
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
-                      {tech}
+          {filteredProjects.map((project) => {
+            const hasCode = Boolean(project.github && project.github.trim());
+            const hasDemo = Boolean(project.demo && project.demo.trim());
+            return (
+              <Card
+                key={project.title}
+                className={`overflow-hidden hover-lift bg-gradient-card border-0 shadow-soft group ${
+                  project.featured ? "md:col-span-2 lg:col-span-1" : ""
+                }`}
+              >
+                {/* Project image */}
+                <div className="relative overflow-hidden bg-muted h-48">
+                  {/* Show the image from public; falls back to title overlay if not found */}
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    onError={(e) => {
+                      // Hide broken image and keep the placeholder gradient/title
+                      (e.currentTarget as HTMLImageElement).style.display = "none";
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-hero opacity-20"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-primary font-semibold text-lg">{project.title}</div>
+                  </div>
+                  {project.featured && (
+                    <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground">
+                      Featured
                     </Badge>
-                  ))}
+                  )}
                 </div>
 
-                {/* Action buttons (real links using asChild) */}
-                <div className="flex space-x-3 pt-2">
-                  <Button
-                    asChild
-                    size="sm"
-                    variant="outline"
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-1"
-                  >
-                    <a
-                      href={project.github || "#"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </a>
-                  </Button>
+                {/* Project content */}
+                <div className="p-6 space-y-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
 
-                  <Button
-                    asChild
-                    size="sm"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground flex-1"
-                  >
-                    <a
-                      href={project.demo || "#"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Eye className="w-4 h-4 mr-2" />
-                      Demo
-                    </a>
-                  </Button>
+                  {/* Tech stack */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <Badge key={tech} variant="secondary" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  {/* Action buttons — render only if links exist */}
+                  <div className="flex space-x-3 pt-2">
+                    {hasCode ? (
+                      <Button
+                        asChild
+                        size="sm"
+                        variant="outline"
+                        className="border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-1"
+                      >
+                        <a href={project.github!} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    ) : (
+                      <Badge variant="secondary" className="flex-1 justify-center">
+                        No Code
+                      </Badge>
+                    )}
+
+                    {hasDemo ? (
+                      <Button
+                        asChild
+                        size="sm"
+                        className="bg-primary hover:bg-primary/90 text-primary-foreground flex-1"
+                      >
+                        <a href={project.demo!} target="_blank" rel="noopener noreferrer">
+                          <Eye className="w-4 h-4 mr-2" />
+                          Demo
+                        </a>
+                      </Button>
+                    ) : (
+                      <Badge variant="secondary" className="flex-1 justify-center">
+                        No Demo
+                      </Badge>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </Card>
-          ))}
+              </Card>
+            );
+          })}
         </div>
 
         {/* Call to action */}
