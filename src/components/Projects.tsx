@@ -7,7 +7,7 @@ import { useState } from "react";
 const Projects = () => {
   const [filter, setFilter] = useState("All");
 
-  // Place these files in project-root/public and reference with a leading slash. [1]
+  // ضع الملفات في public/ واستخدم مسارات تبدأ بـ / مثل /1.jpg
   const projects = [
     {
       title: "VisionWalk",
@@ -15,10 +15,10 @@ const Projects = () => {
         "AI-powered pedestrian detection system using computer vision to enhance urban safety and traffic management.",
       category: "AI",
       tech: ["Python", "TensorFlow", "OpenCV", "Computer Vision"],
-      image: "/1.jpg",          // ✅ correct (served from public) [1][2]
-      github: "",               // empty => hide Code button
-      demo: "/vision.mp4",      // in public or use external URL
-      featured: true,
+      image: "/1.jpg",
+      github: "",                 // فارغ => سيظهر تنبيه عند الضغط
+      demo: "/vision.mp4",
+      featured: false,
     },
     {
       title: "EgGuide",
@@ -26,10 +26,10 @@ const Projects = () => {
         "VR-based tourism platform showcasing Egyptian landmarks with immersive virtual reality experiences.",
       category: "VR",
       tech: ["Unity", "C#", "VR", "3D Modeling"],
-      image: "/eg.jpg",         // ✅
-      github: "",               // empty => hide Code button
-      demo: "",                 // empty => hide Demo button
-      featured: true,
+      image: "/eg.jpg",
+      github: "",
+      demo: "",
+      featured: false,
     },
     {
       title: "Sign Language Translator",
@@ -37,16 +37,21 @@ const Projects = () => {
         "Smart gloves powered by IoT and machine learning that translate sign language into text, bridging communication for the deaf and dumb community.",
       category: "IoT",
       tech: ["Machine Learning", "RandomForest", "Flutter", "ESP32", "Flex Sensors", "Heroku"],
-      image: "/gloves.jpg",     // ✅
-      github: "",               // empty => hide Code button
-      demo: "/gloves.mp4",      // ✅
-      featured: true,
+      image: "/gloves.jpg",
+      github: "",
+      demo: "/gloves.mp4",
+      featured: false,
     },
   ];
 
   const categories = ["All", "AI", "VR", "IoT"];
   const filteredProjects =
     filter === "All" ? projects : projects.filter((p) => p.category === filter);
+
+  // معالج عام لزرّي الكود والديمو عند عدم توفر الرابط
+  const handleMissingLink = (type: "Code" | "Demo", title: string) => {
+    alert(`${type} is not available yet for "${title}". Please check back soon!`);
+  };
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-soft">
@@ -92,14 +97,12 @@ const Projects = () => {
               >
                 {/* Project image */}
                 <div className="relative overflow-hidden bg-muted h-48">
-                  {/* Show the image from public; falls back to title overlay if not found */}
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover"
                     loading="lazy"
                     onError={(e) => {
-                      // Hide broken image and keep the placeholder gradient/title
                       (e.currentTarget as HTMLImageElement).style.display = "none";
                     }}
                   />
@@ -134,7 +137,7 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  {/* Action buttons — render only if links exist */}
+                  {/* Action buttons: الأزرار ثابتة دائمًا */}
                   <div className="flex space-x-3 pt-2">
                     {hasCode ? (
                       <Button
@@ -149,9 +152,15 @@ const Projects = () => {
                         </a>
                       </Button>
                     ) : (
-                      <Badge variant="secondary" className="flex-1 justify-center">
-                        No Code
-                      </Badge>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-1"
+                        onClick={() => handleMissingLink("Code", project.title)}
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </Button>
                     )}
 
                     {hasDemo ? (
@@ -166,9 +175,14 @@ const Projects = () => {
                         </a>
                       </Button>
                     ) : (
-                      <Badge variant="secondary" className="flex-1 justify-center">
-                        No Demo
-                      </Badge>
+                      <Button
+                        size="sm"
+                        className="bg-primary hover:bg-primary/90 text-primary-foreground flex-1"
+                        onClick={() => handleMissingLink("Demo", project.title)}
+                      >
+                        <Eye className="w-4 h-4 mr-2" />
+                        Demo
+                      </Button>
                     )}
                   </div>
                 </div>
