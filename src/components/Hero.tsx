@@ -18,7 +18,7 @@ const Hero = () => {
 
           {/* Brief introduction */}
           <p className="text-lg sm:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
-            Junior ML student building end-to-end projects—from data prep to evaluation—with a growing interest in AI
+            Junior ML student building end-to-end projects from data prep to evaluation with a growing interest in AI
           </p>
 
           {/* CTA buttons */}
