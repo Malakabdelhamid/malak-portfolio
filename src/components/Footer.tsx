@@ -50,21 +50,21 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground">Connect</h4>
             <div className="space-y-3">
               <a 
-                href="mailto:malak.abdelhamid@example.com" 
+                href="mailto:malakabdelhamid6@example.com" 
                 className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors group"
               >
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span>malak.abdelhamid@example.com</span>
+                <span>malakabdelhamid6@example.com</span>
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/malakabdelhamid1/" 
                 className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors group"
               >
                 <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>LinkedIn Profile</span>
               </a>
               <a 
-                href="#" 
+                href="https://github.com/Malakabdelhamid" 
                 className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors group"
               >
                 <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />

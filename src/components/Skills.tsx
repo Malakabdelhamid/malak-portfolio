@@ -6,28 +6,33 @@ import {
   Brain, 
   Users, 
   MessageCircle, 
-  Lightbulb,
   BarChart3,
-  Zap
+  Zap,
+  Network,
+  Crown,
+  Shuffle,
+  BrainCircuit, 
+  Brackets
 } from "lucide-react";
 
 const Skills = () => {
   const technicalSkills = [
     { name: "Python", level: 90, icon: Code2 },
+    { name: "Data Preparation & EDA", level: 88, icon: BarChart3 },
     { name: "Machine Learning", level: 85, icon: Brain },
-    { name: "Data Analysis", level: 88, icon: BarChart3 },
-    { name: "TensorFlow", level: 75, icon: Zap },
     { name: "Pandas", level: 85, icon: Database },
-    { name: "Computer Vision", level: 80, icon: Brain },
+    { name: "Scikit-learn", level: 75, icon: Network },
+    { name: "NumPy", level: 85, icon: Brackets  },
+    { name: "Deep Learning", level: 60, icon: BrainCircuit },
+    { name: "Computer Vision", level: 50, icon: Brain },
   ];
 
   const softSkills = [
     { name: "Communication", icon: MessageCircle, color: "primary" },
     { name: "Teamwork", icon: Users, color: "accent" },
-    { name: "Problem Solving", icon: Lightbulb, color: "primary" },
-    { name: "Project Management", icon: BarChart3, color: "accent" },
-    { name: "Adaptability", icon: Zap, color: "primary" },
-    { name: "Leadership", icon: Users, color: "accent" },
+    { name: "Fast Learner", icon: Zap, color: "primary" },
+    { name: "Flexible and adaptable", icon: Shuffle, color: "primary" },
+    { name: "Leadership", icon: Crown, color: "accent" },
   ];
 
   return (

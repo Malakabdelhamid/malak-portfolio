@@ -13,9 +13,9 @@ const Projects = () => {
       description: "AI-powered pedestrian detection system using computer vision to enhance urban safety and traffic management.",
       category: "AI",
       tech: ["Python", "TensorFlow", "OpenCV", "Computer Vision"],
-      image: "/api/placeholder/400/250",
+      image: "Malakabdelhamid/malak-portfolio/public/1.jpg",
       github: "#",
-      demo: "#",
+      demo: "Malakabdelhamid/malak-portfolio/public/vision.mp4",
       featured: true
     },
     {
@@ -23,54 +23,24 @@ const Projects = () => {
       description: "VR-based tourism platform showcasing Egyptian landmarks with immersive virtual reality experiences.",
       category: "VR",
       tech: ["Unity", "C#", "VR", "3D Modeling"],
-      image: "/api/placeholder/400/250",
+      image: "Malakabdelhamid/malak-portfolio/public/eg.jpg",
       github: "#",
       demo: "#",
       featured: true
     },
     {
-      title: "LED Recycling Project",
-      description: "Sustainable hardware solution for LED light recycling, promoting environmental consciousness in tech.",
-      category: "Hardware",
-      tech: ["Electronics", "Sustainability", "IoT", "Arduino"],
-      image: "/api/placeholder/400/250",
-      github: "#",
-      demo: "#",
-      featured: false
-    },
-    {
-      title: "Data Analysis Dashboard",
-      description: "Interactive dashboard for complex dataset visualization and business intelligence insights.",
-      category: "Data",
-      tech: ["Python", "Pandas", "Plotly", "Streamlit"],
-      image: "/api/placeholder/400/250",
-      github: "#",
-      demo: "#",
-      featured: false
-    },
-    {
-      title: "ML Model Optimizer",
-      description: "Tool for automatically optimizing machine learning models for better performance and efficiency.",
-      category: "AI",
-      tech: ["Python", "Scikit-learn", "MLflow", "Docker"],
-      image: "/api/placeholder/400/250",
-      github: "#",
-      demo: "#",
-      featured: false
-    },
-    {
-      title: "Smart Campus System",
-      description: "IoT-based campus management system for resource optimization and student experience enhancement.",
+      title: "Sign Language Translator",
+      description: "Smart gloves powered by IoT and machine learning that translate sign language into text, bridging communication for the deaf and dumb community.",
       category: "IoT",
-      tech: ["IoT", "Python", "React", "MongoDB"],
-      image: "/api/placeholder/400/250",
+      tech: ["Machine Learning", "RandomForest", "Flutter", "ESP32", "Flex Sensors", "Heroku"],
+      image: "Malakabdelhamid/malak-portfolio/public/gloves.jpg",
       github: "#",
-      demo: "#",
-      featured: false
-    }
+      demo: "Malakabdelhamid/malak-portfolio/public/gloves.mp4",
+      featured: true
+    },
   ];
 
-  const categories = ["All", "AI", "Data", "VR", "Hardware", "IoT"];
+  const categories = ["All", "AI", "VR", "IoT"];
   
   const filteredProjects = filter === "All" 
     ? projects 
@@ -185,8 +155,10 @@ const Projects = () => {
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
             >
-              <ExternalLink className="w-5 h-5 mr-2" />
-              Get In Touch
+              <a href="#contact">
+                <ExternalLink className="w-5 h-5 mr-2" />
+                Get In Touch
+              </a>
             </Button>
           </Card>
         </div>

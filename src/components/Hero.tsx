@@ -18,7 +18,7 @@ const Hero = () => {
 
           {/* Brief introduction */}
           <p className="text-lg sm:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
-            Junior ML student building end-to-end projects from data prep to evaluation with a growing interest in AI
+            ML student building end-to-end projects from data prep to evaluation with a growing interest in AI
           </p>
 
           {/* CTA buttons */}
@@ -26,7 +26,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg font-medium group"
-              onClick={() => window.open('/Resume_Malak_Mohamed.pdf', '_blank')}
+              onClick={() => window.open('Malakabdelhamid/malak-portfolio/public/Resume_Malak_Mohamed.pdf', '_blank')}
             >
               <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
               Download Resume

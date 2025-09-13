@@ -36,14 +36,6 @@ const About = () => {
                 for <span className="font-medium text-accent-foreground">continuous improvement</span>.
               </p>
             </div>
-
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 font-medium group"
-            >
-              <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-              Download Full Resume
-            </Button>
           </div>
 
           {/* Experience cards */}

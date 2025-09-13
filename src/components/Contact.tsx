@@ -69,7 +69,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Email</h4>
-                    <p className="text-muted-foreground">malak.abdelhamid@example.com</p>
+                    <p className="text-muted-foreground">malakabdelhamid6@example.com</p>
                   </div>
                 </div>
               </Card>
@@ -81,7 +81,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">LinkedIn</h4>
-                    <p className="text-muted-foreground">linkedin.com/in/malakabdelhamid</p>
+                    <p className="text-muted-foreground">https://www.linkedin.com/in/malakabdelhamid1/</p>
                   </div>
                 </div>
               </Card>
@@ -93,7 +93,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">GitHub</h4>
-                    <p className="text-muted-foreground">github.com/malakabdelhamid</p>
+                    <p className="text-muted-foreground">https://github.com/Malakabdelhamid</p>
                   </div>
                 </div>
               </Card>
@@ -105,7 +105,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Location</h4>
-                    <p className="text-muted-foreground">Available for remote work</p>
+                    <p className="text-muted-foreground">Cairo, Egypt and available for remote work</p>
                   </div>
                 </div>
               </Card>
