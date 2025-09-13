@@ -20,20 +20,20 @@ const About = () => {
           <div className="space-y-6">
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed">
-                AI student and ML developer passionate about end-to-end workflows—from data preparation 
-                and exploratory analysis to baseline modeling and thorough evaluation. I have a growing 
-                interest in advancing my expertise in AI.
+                <span className="font-semibold text-primary">AI student</span> and <span className="font-semibold text-primary">ML developer</span> passionate about <span className="font-medium text-accent-foreground">end-to-end workflows</span>—from <span className="font-medium text-accent-foreground">data preparation</span> 
+                and <span className="font-medium text-accent-foreground">exploratory analysis</span> to <span className="font-medium text-accent-foreground">baseline modeling</span> and thorough <span className="font-medium text-accent-foreground">evaluation</span>. I have a growing 
+                interest in advancing my expertise in <span className="font-semibold text-primary">AI</span>.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                Currently, I am part of the DEPI national ML internship and have undergone comprehensive 
-                training in core machine learning, deep learning fundamentals, and modern AI techniques. 
-                My core skills include Python, data cleaning, exploratory data analysis, and building 
-                scikit-learn pipelines.
+                Currently, I am part of the <span className="font-semibold text-primary">DEPI national ML internship</span> and have undergone comprehensive 
+                training in core <span className="font-medium text-accent-foreground">machine learning</span>, <span className="font-medium text-accent-foreground">deep learning fundamentals</span>, and modern <span className="font-medium text-accent-foreground">AI techniques</span>. 
+                My core skills include <span className="font-semibold text-primary">Python</span>, <span className="font-medium text-accent-foreground">data cleaning</span>, <span className="font-medium text-accent-foreground">exploratory data analysis</span>, and building 
+                <span className="font-semibold text-primary">scikit-learn pipelines</span>.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                I pride myself on clear and honest communication, adhering to conservative timelines, 
-                delivering well-documented, tidy notebooks, and being consistently open to feedback 
-                for continuous improvement.
+                I pride myself on <span className="font-medium text-accent-foreground">clear and honest communication</span>, adhering to <span className="font-medium text-accent-foreground">conservative timelines</span>, 
+                delivering <span className="font-medium text-accent-foreground">well-documented, tidy notebooks</span>, and being consistently open to <span className="font-medium text-accent-foreground">feedback</span> 
+                for <span className="font-medium text-accent-foreground">continuous improvement</span>.
               </p>
             </div>
 
