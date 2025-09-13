@@ -3,13 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { 
-  Mail, 
-  Linkedin, 
-  Github, 
-  MapPin, 
+import {
+  Mail,
+  Linkedin,
+  Github,
+  MapPin,
   Send,
-  MessageCircle
+  MessageCircle,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -17,21 +17,31 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
     console.log("Form submitted:", formData);
   };
+
+  const mailtoHref =
+    "mailto:malakabdelhamid6@example.com" +
+    "?subject=" +
+    encodeURIComponent("Portfolio Inquiry") +
+    "&body=" +
+    encodeURIComponent(
+      "Hi Malak,\n\nI saw your portfolio and would love to connect.\n\nBest regards,"
+    );
 
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -53,59 +63,85 @@ const Contact = () => {
                 Let's Connect
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                I'm always interested in discussing new opportunities, innovative projects, 
-                or simply connecting with fellow tech enthusiasts. Whether you're a 
-                recruiter, collaborator, or someone who shares my passion for AI and data science, 
+                I'm always interested in discussing new opportunities, innovative projects,
+                or simply connecting with fellow tech enthusiasts. Whether you're a
+                recruiter, collaborator, or someone who shares my passion for AI and data science,
                 I'd love to hear from you.
               </p>
             </div>
 
             {/* Contact methods */}
             <div className="space-y-6">
-              <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group cursor-pointer">
-                <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-primary-soft rounded-lg group-hover:scale-110 transition-transform">
-                    <Mail className="w-6 h-6 text-primary" />
+              {/* Email card */}
+              <a href={mailtoHref}>
+                <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group cursor-pointer">
+                  <div className="flex items-center space-x-4">
+                    <div className="p-3 bg-primary-soft rounded-lg group-hover:scale-110 transition-transform">
+                      <Mail className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Email</h4>
+                      <p className="text-muted-foreground">
+                        malakabdelhamid6@example.com
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">Email</h4>
-                    <p className="text-muted-foreground">malakabdelhamid6@example.com</p>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </a>
 
-              <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group cursor-pointer">
-                <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-accent rounded-lg group-hover:scale-110 transition-transform">
-                    <Linkedin className="w-6 h-6 text-accent-foreground" />
+              {/* LinkedIn card */}
+              <a
+                href="https://www.linkedin.com/in/malakabdelhamid1/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group cursor-pointer">
+                  <div className="flex items-center space-x-4">
+                    <div className="p-3 bg-accent rounded-lg group-hover:scale-110 transition-transform">
+                      <Linkedin className="w-6 h-6 text-accent-foreground" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">LinkedIn</h4>
+                      <p className="text-muted-foreground">
+                        Malak Abd-ElHamid
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">LinkedIn</h4>
-                    <p className="text-muted-foreground">https://www.linkedin.com/in/malakabdelhamid1/</p>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </a>
 
-              <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group cursor-pointer">
-                <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-primary-soft rounded-lg group-hover:scale-110 transition-transform">
-                    <Github className="w-6 h-6 text-primary" />
+              {/* GitHub card */}
+              <a
+                href="https://github.com/Malakabdelhamid"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group cursor-pointer">
+                  <div className="flex items-center space-x-4">
+                    <div className="p-3 bg-primary-soft rounded-lg group-hover:scale-110 transition-transform">
+                      <Github className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">GitHub</h4>
+                      <p className="text-muted-foreground">
+                        Malakabdelhamid
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">GitHub</h4>
-                    <p className="text-muted-foreground">https://github.com/Malakabdelhamid</p>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </a>
 
-              <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group cursor-pointer">
+              {/* Location card */}
+              <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group">
                 <div className="flex items-center space-x-4">
                   <div className="p-3 bg-accent rounded-lg group-hover:scale-110 transition-transform">
                     <MapPin className="w-6 h-6 text-accent-foreground" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Location</h4>
-                    <p className="text-muted-foreground">Cairo, Egypt and available for remote work</p>
+                    <p className="text-muted-foreground">
+                      Cairo, Egypt and available for remote work
+                    </p>
                   </div>
                 </div>
               </Card>
@@ -171,9 +207,9 @@ const Contact = () => {
                 />
               </div>
 
-              <Button 
+              <Button
                 type="submit"
-                size="lg" 
+                size="lg"
                 className="w-full bg-primary hover:bg-primary/90 text-primary-foreground group"
               >
                 <Send className="w-5 h-5 mr-2 group-hover:animate-pulse" />
