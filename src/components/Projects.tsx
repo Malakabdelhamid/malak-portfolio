@@ -13,9 +13,9 @@ const Projects = () => {
       description: "AI-powered pedestrian detection system using computer vision to enhance urban safety and traffic management.",
       category: "AI",
       tech: ["Python", "TensorFlow", "OpenCV", "Computer Vision"],
-      image: "Malakabdelhamid/malak-portfolio/public/1.jpg",
+      image: "/1.jpg",
       github: "#",
-      demo: "Malakabdelhamid/malak-portfolio/public/vision.mp4",
+      demo: "/vision.mp4",
       featured: true
     },
     {
@@ -23,7 +23,7 @@ const Projects = () => {
       description: "VR-based tourism platform showcasing Egyptian landmarks with immersive virtual reality experiences.",
       category: "VR",
       tech: ["Unity", "C#", "VR", "3D Modeling"],
-      image: "Malakabdelhamid/malak-portfolio/public/eg.jpg",
+      image: "/eg.jpg",
       github: "#",
       demo: "#",
       featured: true
@@ -33,9 +33,9 @@ const Projects = () => {
       description: "Smart gloves powered by IoT and machine learning that translate sign language into text, bridging communication for the deaf and dumb community.",
       category: "IoT",
       tech: ["Machine Learning", "RandomForest", "Flutter", "ESP32", "Flex Sensors", "Heroku"],
-      image: "Malakabdelhamid/malak-portfolio/public/gloves.jpg",
+      image: "/gloves.jpg",
       github: "#",
-      demo: "Malakabdelhamid/malak-portfolio/public/gloves.mp4",
+      demo: "/gloves.mp4",
       featured: true
     },
   ];
