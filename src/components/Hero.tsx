@@ -11,15 +11,14 @@ const Hero = () => {
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
               <span className="gradient-text">Malak AbdElHamid</span>
             </h1>
-            <div className="text-lg sm:text-xl text-muted-foreground font-medium">
+            <div className="text-xl sm:text-2xl text-muted-foreground font-medium">
               <span>AI Engineer</span>
             </div>
           </div>
 
           {/* Brief introduction */}
           <p className="text-lg sm:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
-            Passionate about leveraging AI and data to solve real-world problems. 
-            Currently exploring machine learning, computer vision, and innovative tech solutions.
+            Junior ML student building end-to-end projects—from data prep to evaluation—with a growing interest in AI
           </p>
 
           {/* CTA buttons */}
@@ -27,6 +26,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg font-medium group"
+              onClick={() => window.open('/Resume_Malak_Mohamed.pdf', '_blank')}
             >
               <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
               Download Resume
