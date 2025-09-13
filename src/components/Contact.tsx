@@ -119,7 +119,7 @@ const Contact = () => {
                 <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group">
                   <div className="flex items-center space-x-4">
                     <div className="p-3 bg-primary-soft rounded-lg group-hover:scale-110 transition-transform">
-                      <Github className="w-6 h-6 text-primary" />
+                      <Github className="w-6 h-6 text-accent-foreground" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground">GitHub</h4>
