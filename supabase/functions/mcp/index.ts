@@ -7,13 +7,13 @@ import { defineMcp } from "npm:@lovable.dev/mcp-js@0.24.0";
 
 // src/lib/mcp/tools/get-about.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.24.0";
-var about = `Malak Mohamed \u2014 AI student and ML developer.
+var about = `Malak Abd-ElHamid \u2014 Artificial Intelligence Graduate from Helwan International Technological University (HITU), 2022\u20132026.
 
-Passionate about end-to-end workflows: data preparation, exploratory data analysis, baseline modeling, and thorough evaluation. Currently part of the DEPI national ML internship with comprehensive training in machine learning, deep learning fundamentals, and modern AI techniques.
+Focused on Machine Learning, Computer Vision, and NLP with hands-on experience building end-to-end AI applications. Featured projects include EyeSpeak (AI-powered eye tracking on Raspberry Pi), VisionWalk (YOLOv5 pedestrian detection), and Calibra8 (industrial LLM chatbot with FastAPI and MySQL).
 
-Core skills: Python, data cleaning, exploratory data analysis, and building scikit-learn pipelines.
+Currently a Machine Learning Intern at the Digital Egypt Pioneers Initiative (DEPI), with prior AI & Business training at Commercial International Bank (CIB).
 
-Professional approach: clear and honest communication, conservative timelines, well-documented tidy notebooks, and open to feedback for continuous improvement.`;
+Core stack: Python, FastAPI, TensorFlow, Keras, OpenCV, Scikit-Learn, Pandas, NumPy, YOLOv5, MySQL.`;
 var get_about_default = defineTool({
   name: "get_about",
   title: "Get about / bio",
@@ -25,23 +25,15 @@ var get_about_default = defineTool({
 
 // src/lib/mcp/tools/get-skills.ts
 import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.24.0";
-var technical = [
-  { name: "Python", level: 90 },
-  { name: "Data Preparation & EDA", level: 88 },
-  { name: "Machine Learning", level: 85 },
-  { name: "Pandas", level: 85 },
-  { name: "Scikit-learn", level: 75 },
-  { name: "NumPy", level: 85 },
-  { name: "Deep Learning", level: 60 },
-  { name: "Computer Vision", level: 50 }
-];
-var soft = [
-  "Communication",
-  "Teamwork",
-  "Fast Learner",
-  "Leadership",
-  "Flexible and adaptable"
-];
+var categories = {
+  programming: ["Python", "Java"],
+  ai: ["Machine Learning", "Deep Learning", "Computer Vision", "Natural Language Processing"],
+  backend: ["FastAPI", "REST APIs"],
+  database: ["SQL", "MySQL"],
+  libraries: ["TensorFlow", "Keras", "OpenCV", "Scikit-Learn", "Pandas", "NumPy", "YOLOv5"],
+  tools: ["Git", "GitHub", "VS Code", "Raspberry Pi", "Microsoft Office"]
+};
+var soft = ["Communication", "Teamwork", "Fast Learner", "Flexible and Adaptable"];
 var get_skills_default = defineTool2({
   name: "get_skills",
   title: "Get skills",
@@ -49,10 +41,11 @@ var get_skills_default = defineTool2({
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
-    const text = "Technical skills:\n" + technical.map((s) => `- ${s.name} (${s.level}%)`).join("\n") + "\n\nSoft skills:\n" + soft.map((s) => `- ${s}`).join("\n");
+    const text = Object.entries(categories).map(([k, v]) => `${k[0].toUpperCase() + k.slice(1)}:
+` + v.map((s) => `- ${s}`).join("\n")).join("\n\n") + "\n\nSoft skills:\n" + soft.map((s) => `- ${s}`).join("\n");
     return {
       content: [{ type: "text", text }],
-      structuredContent: { technical, soft }
+      structuredContent: { ...categories, soft }
     };
   }
 });
@@ -61,18 +54,41 @@ var get_skills_default = defineTool2({
 import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.24.0";
 var projects = [
   {
-    title: "VisionWalk",
-    description: "AI-powered pedestrian detection system using computer vision to enhance urban safety and traffic management.",
-    demo: "/vision.mp4"
+    title: "EyeSpeak",
+    description: "AI-powered eye tracking system for hands-free interaction using Computer Vision and Machine Learning on Raspberry Pi Zero 2 W. Achieved 87% gaze estimation accuracy.",
+    github: "https://github.com/Malakabdelhamid/EyeSpeak",
+    tech: ["Python", "OpenCV", "Random Forest", "Raspberry Pi", "Android", "IoT"]
   },
   {
-    title: "EgGuide",
-    description: "VR-based tourism platform showcasing Egyptian landmarks with immersive virtual reality experiences."
+    title: "Calibra8 AI Chatbot",
+    description: "Industrial AI chatbot combining LLMs, semantic search, and product recommendations built with FastAPI, Ollama, and MySQL.",
+    tech: ["Python", "FastAPI", "Ollama", "MySQL", "LLMs"]
+  },
+  {
+    title: "VisionWalk",
+    description: "Real-time pedestrian detection using YOLOv5 and OpenCV trained on the Caltech Pedestrian Dataset. Achieved 80% accuracy.",
+    github: "https://github.com/Malakabdelhamid/VisionWalk",
+    demo: "/vision.mp4",
+    tech: ["Python", "YOLOv5", "OpenCV", "TensorFlow"]
   },
   {
     title: "Sign Language Translator",
-    description: "Smart gloves powered by IoT and machine learning that translate sign language into text, bridging communication for the deaf and dumb community.",
-    demo: "/gloves.mp4"
+    description: "Smart gloves powered by ML that translate sign language into text using flex sensors and ESP32.",
+    github: "https://github.com/Malakabdelhamid/Sign-Language-Translator",
+    demo: "/gloves.mp4",
+    tech: ["Python", "Random Forest", "ESP32", "Flutter"]
+  },
+  {
+    title: "Heart Disease Prediction",
+    description: "ML model predicting heart disease risk from patient medical data.",
+    github: "https://github.com/Malakabdelhamid/Heart-Disease-Prediction",
+    tech: ["Python", "Scikit-Learn", "Pandas"]
+  },
+  {
+    title: "Earthquake Prediction",
+    description: "ML model for earthquake prediction and seismic data analysis.",
+    github: "https://github.com/Malakabdelhamid/Earthquake-Prediction",
+    tech: ["Python", "Machine Learning", "Pandas", "NumPy"]
   }
 ];
 var get_projects_default = defineTool3({
@@ -85,9 +101,13 @@ var get_projects_default = defineTool3({
     content: [
       {
         type: "text",
-        text: projects.map((p) => `${p.title}
-${p.description}${p.demo ? `
-Demo: ${p.demo}` : ""}`).join("\n\n")
+        text: projects.map(
+          (p) => `${p.title}
+${p.description}` + (p.tech ? `
+Tech: ${p.tech.join(", ")}` : "") + (p.github ? `
+GitHub: ${p.github}` : "") + (p.demo ? `
+Demo: ${p.demo}` : "")
+        ).join("\n\n")
       }
     ],
     structuredContent: { projects }
@@ -97,9 +117,10 @@ Demo: ${p.demo}` : ""}`).join("\n\n")
 // src/lib/mcp/tools/get-contact.ts
 import { defineTool as defineTool4 } from "npm:@lovable.dev/mcp-js@0.24.0";
 var contact = {
-  email: "malakabdelhamid6@example.com",
+  email: "malakabdelhamid6@gmail.com",
   linkedin: "https://www.linkedin.com/in/malakabdelhamid1/",
-  github: "https://github.com/Malakabdelhamid"
+  github: "https://github.com/Malakabdelhamid",
+  portfolio: "https://malak-portfolio-five.vercel.app/"
 };
 var get_contact_default = defineTool4({
   name: "get_contact",
@@ -113,7 +134,8 @@ var get_contact_default = defineTool4({
         type: "text",
         text: `Email: ${contact.email}
 LinkedIn: ${contact.linkedin}
-GitHub: ${contact.github}`
+GitHub: ${contact.github}
+Portfolio: ${contact.portfolio}`
       }
     ],
     structuredContent: contact

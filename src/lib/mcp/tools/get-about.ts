@@ -1,12 +1,12 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 
-const about = `Malak Mohamed — AI student and ML developer.
+const about = `Malak Abd-ElHamid — Artificial Intelligence Graduate from Helwan International Technological University (HITU), 2022–2026.
 
-Passionate about end-to-end workflows: data preparation, exploratory data analysis, baseline modeling, and thorough evaluation. Currently part of the DEPI national ML internship with comprehensive training in machine learning, deep learning fundamentals, and modern AI techniques.
+Focused on Machine Learning, Computer Vision, and NLP with hands-on experience building end-to-end AI applications. Featured projects include EyeSpeak (AI-powered eye tracking on Raspberry Pi), VisionWalk (YOLOv5 pedestrian detection), and Calibra8 (industrial LLM chatbot with FastAPI and MySQL).
 
-Core skills: Python, data cleaning, exploratory data analysis, and building scikit-learn pipelines.
+Currently a Machine Learning Intern at the Digital Egypt Pioneers Initiative (DEPI), with prior AI & Business training at Commercial International Bank (CIB).
 
-Professional approach: clear and honest communication, conservative timelines, well-documented tidy notebooks, and open to feedback for continuous improvement.`;
+Core stack: Python, FastAPI, TensorFlow, Keras, OpenCV, Scikit-Learn, Pandas, NumPy, YOLOv5, MySQL.`;
 
 export default defineTool({
   name: "get_about",

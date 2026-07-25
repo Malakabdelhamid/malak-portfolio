@@ -1,9 +1,10 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 
 const contact = {
-  email: "malakabdelhamid6@example.com",
+  email: "malakabdelhamid6@gmail.com",
   linkedin: "https://www.linkedin.com/in/malakabdelhamid1/",
   github: "https://github.com/Malakabdelhamid",
+  portfolio: "https://malak-portfolio-five.vercel.app/",
 };
 
 export default defineTool({
@@ -16,7 +17,7 @@ export default defineTool({
     content: [
       {
         type: "text",
-        text: `Email: ${contact.email}\nLinkedIn: ${contact.linkedin}\nGitHub: ${contact.github}`,
+        text: `Email: ${contact.email}\nLinkedIn: ${contact.linkedin}\nGitHub: ${contact.github}\nPortfolio: ${contact.portfolio}`,
       },
     ],
     structuredContent: contact,

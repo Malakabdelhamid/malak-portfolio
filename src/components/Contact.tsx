@@ -34,8 +34,9 @@ const Contact = () => {
     console.log("Form submitted:", formData);
   };
 
+  const email = "malakabdelhamid6@gmail.com";
   const mailtoHref =
-    "mailto:malakabdelhamid6@example.com" +
+    `mailto:${email}` +
     "?subject=" +
     encodeURIComponent("Portfolio Inquiry") +
     "&body=" +
@@ -82,7 +83,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold text-foreground">Email</h4>
                       <p className="text-muted-foreground">
-                        malakabdelhamid6@example.com
+                        {email}
                       </p>
                     </div>
                   </div>
@@ -131,20 +132,46 @@ const Contact = () => {
                 </Card>
               </a>
 
-              {/* Location card */}
-              <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group">
-                <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-accent rounded-lg group-hover:scale-110 transition-transform">
-                    <MapPin className="w-6 h-6 text-accent-foreground" />
+              {/* Portfolio card */}
+              <a
+                href="https://malak-portfolio-five.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group">
+                  <div className="flex items-center space-x-4">
+                    <div className="p-3 bg-accent rounded-lg group-hover:scale-110 transition-transform">
+                      <MapPin className="w-6 h-6 text-accent-foreground" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Portfolio</h4>
+                      <p className="text-muted-foreground">
+                        malak-portfolio-five.vercel.app
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">Location</h4>
-                    <p className="text-muted-foreground">
-                      Cairo, Egypt and available for remote work
-                    </p>
+                </Card>
+              </a>
+
+              {/* Resume card */}
+              <a
+                href="/Resume_Malak_AbdElHamid.pdf"
+                download="Resume_Malak_AbdElHamid.pdf"
+              >
+                <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group">
+                  <div className="flex items-center space-x-4">
+                    <div className="p-3 bg-primary-soft rounded-lg group-hover:scale-110 transition-transform">
+                      <Mail className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground">Resume</h4>
+                      <p className="text-muted-foreground">
+                        Download my latest CV (PDF)
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </a>
             </div>
           </div>
 

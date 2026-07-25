@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Download, GraduationCap, Briefcase, Heart } from "lucide-react";
+import { GraduationCap, Briefcase, Sparkles } from "lucide-react";
 
 const About = () => {
   return (
@@ -11,34 +10,38 @@ const About = () => {
             About Me
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get to know the person behind the projects and passion for technology
+            AI Graduate turning research and data into production-ready applications
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Profile content */}
           <div className="space-y-6">
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed">
-                <span className="font-semibold text-primary">AI student</span> and <span className="font-semibold text-primary">ML developer</span> passionate about <span className="font-medium text-accent-foreground">end-to-end workflows</span>—from <span className="font-medium text-accent-foreground">data preparation</span> 
-                and <span className="font-medium text-accent-foreground">exploratory analysis</span> to <span className="font-medium text-accent-foreground">baseline modeling</span> and thorough <span className="font-medium text-accent-foreground">evaluation</span>. I have a growing 
-                interest in advancing my expertise in <span className="font-semibold text-primary">AI</span>.
+                I'm an <span className="font-semibold text-primary">Artificial Intelligence graduate</span> with hands-on experience in
+                <span className="font-medium text-accent-foreground"> Machine Learning</span>,
+                <span className="font-medium text-accent-foreground"> Deep Learning</span>,
+                <span className="font-medium text-accent-foreground"> Computer Vision</span>, and
+                <span className="font-medium text-accent-foreground"> Natural Language Processing (NLP)</span>.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                Currently, I am part of the <span className="font-semibold text-primary">DEPI national ML internship</span> and have undergone comprehensive 
-                training in core <span className="font-medium text-accent-foreground">machine learning</span>, <span className="font-medium text-accent-foreground">deep learning fundamentals</span>, and modern <span className="font-medium text-accent-foreground">AI techniques</span>. 
-                My core skills include <span className="font-semibold text-primary">Python</span>, <span className="font-medium text-accent-foreground">data cleaning</span>, <span className="font-medium text-accent-foreground">exploratory data analysis</span>, and building 
-                <span className="font-semibold text-primary">scikit-learn pipelines</span>.
+                I enjoy building AI-powered applications that solve practical problems and continuously
+                improving my technical skills through real-world projects.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                I pride myself on <span className="font-medium text-accent-foreground">clear and honest communication</span>, adhering to <span className="font-medium text-accent-foreground">conservative timelines</span>, 
-                delivering <span className="font-medium text-accent-foreground">well-documented, tidy notebooks</span>, and being consistently open to <span className="font-medium text-accent-foreground">feedback</span> 
-                for <span className="font-medium text-accent-foreground">continuous improvement</span>.
+                My graduation project, <span className="font-semibold text-primary">EyeSpeak</span>, focuses on
+                AI-based eye tracking for hands-free interaction using Computer Vision and Machine Learning.
+                I have also developed projects in pedestrian detection, sign language translation, earthquake
+                prediction, heart disease prediction, and AI-powered industrial chatbots.
+              </p>
+              <p className="text-lg text-foreground/80 leading-relaxed">
+                I enjoy learning modern AI technologies and building production-ready AI applications using
+                <span className="font-semibold text-primary"> Python</span> and
+                <span className="font-semibold text-primary"> FastAPI</span>.
               </p>
             </div>
           </div>
 
-          {/* Experience cards */}
           <div className="space-y-6">
             <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft">
               <div className="flex items-start space-x-4">
@@ -47,12 +50,13 @@ const About = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-foreground mb-1">
-                    DEPI ML Internship
+                    Education
                   </h3>
-                  <p className="text-muted-foreground mb-2">Current</p>
+                  <p className="text-muted-foreground mb-2">2022 – 2026</p>
                   <p className="text-sm text-foreground/70">
-                    Part of the national ML internship program with comprehensive training 
-                    in machine learning, deep learning fundamentals, and modern AI techniques.
+                    Bachelor of Technology in Artificial Intelligence
+                    <br />
+                    Helwan International Technological University
                   </p>
                 </div>
               </div>
@@ -65,12 +69,13 @@ const About = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-foreground mb-1">
-                    Technical Skills
+                    Experience
                   </h3>
-                  <p className="text-muted-foreground mb-2">Core Competencies</p>
+                  <p className="text-muted-foreground mb-2">Jun 2025 – Dec 2025</p>
                   <p className="text-sm text-foreground/70">
-                    Python programming, data cleaning, exploratory data analysis, 
-                    and building robust scikit-learn pipelines for ML projects.
+                    Microsoft Machine Learning Engineer Track
+                    <br />
+                    Digital Egypt Pioneers Initiative (DEPI)
                   </p>
                 </div>
               </div>
@@ -79,16 +84,16 @@ const About = () => {
             <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft">
               <div className="flex items-start space-x-4">
                 <div className="p-3 bg-primary-soft rounded-lg">
-                  <Heart className="w-6 h-6 text-primary" />
+                  <Sparkles className="w-6 h-6 text-primary" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-foreground mb-1">
-                    Professional Approach
+                    Interests
                   </h3>
-                  <p className="text-muted-foreground mb-2">Work Ethics</p>
+                  <p className="text-muted-foreground mb-2">Focus Areas</p>
                   <p className="text-sm text-foreground/70">
-                    Clear communication, conservative timelines, well-documented notebooks, 
-                    and consistently open to feedback for continuous improvement.
+                    Machine Learning · Computer Vision · Natural Language Processing ·
+                    AI Engineering · AI Backend Development
                   </p>
                 </div>
               </div>

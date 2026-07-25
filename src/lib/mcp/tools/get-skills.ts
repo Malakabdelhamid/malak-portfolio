@@ -1,23 +1,15 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 
-const technical = [
-  { name: "Python", level: 90 },
-  { name: "Data Preparation & EDA", level: 88 },
-  { name: "Machine Learning", level: 85 },
-  { name: "Pandas", level: 85 },
-  { name: "Scikit-learn", level: 75 },
-  { name: "NumPy", level: 85 },
-  { name: "Deep Learning", level: 60 },
-  { name: "Computer Vision", level: 50 },
-];
+const categories = {
+  programming: ["Python", "Java"],
+  ai: ["Machine Learning", "Deep Learning", "Computer Vision", "Natural Language Processing"],
+  backend: ["FastAPI", "REST APIs"],
+  database: ["SQL", "MySQL"],
+  libraries: ["TensorFlow", "Keras", "OpenCV", "Scikit-Learn", "Pandas", "NumPy", "YOLOv5"],
+  tools: ["Git", "GitHub", "VS Code", "Raspberry Pi", "Microsoft Office"],
+};
 
-const soft = [
-  "Communication",
-  "Teamwork",
-  "Fast Learner",
-  "Leadership",
-  "Flexible and adaptable",
-];
+const soft = ["Communication", "Teamwork", "Fast Learner", "Flexible and Adaptable"];
 
 export default defineTool({
   name: "get_skills",
@@ -27,13 +19,14 @@ export default defineTool({
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const text =
-      "Technical skills:\n" +
-      technical.map((s) => `- ${s.name} (${s.level}%)`).join("\n") +
+      Object.entries(categories)
+        .map(([k, v]) => `${k[0].toUpperCase() + k.slice(1)}:\n` + v.map((s) => `- ${s}`).join("\n"))
+        .join("\n\n") +
       "\n\nSoft skills:\n" +
       soft.map((s) => `- ${s}`).join("\n");
     return {
       content: [{ type: "text", text }],
-      structuredContent: { technical, soft },
+      structuredContent: { ...categories, soft },
     };
   },
 });
