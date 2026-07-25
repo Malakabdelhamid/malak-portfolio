@@ -14,7 +14,7 @@ const Projects = () => {
         "AI-powered eye tracking system enabling hands-free interaction using Computer Vision and Machine Learning. Optimized to run on Raspberry Pi Zero 2 W and integrated with Android and IoT devices.",
       category: "AI",
       tech: ["Python", "OpenCV", "Random Forest", "Raspberry Pi Zero 2 W", "Android", "IoT"],
-      image: "",
+      image: "/3.jpg",
       github: "https://github.com/Malakabdelhamid/EyeSpeak",
       demo: "",
       result: "Achieved 87% gaze estimation accuracy.",
