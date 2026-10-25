@@ -1,12 +1,13 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 
 const categories = {
-  programming: ["Python", "Java"],
-  ai: ["Machine Learning", "Deep Learning", "Computer Vision", "Natural Language Processing"],
-  backend: ["FastAPI", "REST APIs"],
-  database: ["SQL", "MySQL"],
-  libraries: ["TensorFlow", "Keras", "OpenCV", "Scikit-Learn", "Pandas", "NumPy", "YOLOv5"],
-  tools: ["Git", "GitHub", "VS Code", "Raspberry Pi", "Microsoft Office"],
+  programming: ["Python"],
+  machineLearning: ["Scikit-learn", "NumPy", "Pandas", "Feature Engineering", "Model Training and Evaluation"],
+  deepLearning: ["PyTorch", "TensorFlow", "CNNs"],
+  computerVision: ["OpenCV", "YOLO", "Image Processing"],
+  nlpAndGenerativeAI: ["NLP", "LLMs", "Prompt Engineering", "RAG", "LangChain", "Hugging Face Transformers"],
+  aiAgentsAndBackend: ["AI Agents", "Tool Calling", "Multi-Agent Systems", "FastAPI", "Model Inference", "Model Deployment"],
+  tools: ["Git", "GitHub", "Jupyter Notebook"],
 };
 
 const soft = ["Communication", "Teamwork", "Fast Learner", "Flexible and Adaptable"];
@@ -14,7 +15,7 @@ const soft = ["Communication", "Teamwork", "Fast Learner", "Flexible and Adaptab
 export default defineTool({
   name: "get_skills",
   title: "Get skills",
-  description: "Returns Malak's technical skills (with proficiency levels) and soft skills.",
+  description: "Returns Malak's technical skills and soft skills.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {

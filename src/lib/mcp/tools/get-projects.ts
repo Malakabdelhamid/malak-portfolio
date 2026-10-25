@@ -2,52 +2,34 @@ import { defineTool } from "@lovable.dev/mcp-js";
 
 const projects = [
   {
-    title: "EyeSpeak",
+    title: "EyeSpeak — AI-Based Eye Tracking System",
     description:
-      "AI-powered eye tracking system for hands-free interaction using Computer Vision and Machine Learning on Raspberry Pi Zero 2 W. Achieved 87% gaze estimation accuracy.",
+      "AI-powered eye tracking system for hands-free interaction using Computer Vision and Machine Learning, integrated with Android and IoT devices on Raspberry Pi Zero 2 W. Reported result: 87% gaze estimation accuracy.",
     github: "https://github.com/Malakabdelhamid/EyeSpeak",
     tech: ["Python", "OpenCV", "Random Forest", "Raspberry Pi", "Android", "IoT"],
   },
   {
-    title: "Calibra8 AI Chatbot",
+    title: "VisionWalk — Real-Time Pedestrian Detection",
     description:
-      "Industrial AI chatbot combining LLMs, semantic search, and product recommendations built with FastAPI, Ollama, and MySQL.",
-    tech: ["Python", "FastAPI", "Ollama", "MySQL", "LLMs"],
-  },
-  {
-    title: "VisionWalk",
-    description:
-      "Real-time pedestrian detection using YOLOv5 and OpenCV trained on the Caltech Pedestrian Dataset. Achieved 80% accuracy.",
+      "Real-time pedestrian detection system developed with YOLOv5 and Python, trained on the Caltech Pedestrian Dataset. Reported result: 80% detection accuracy in practical testing.",
     github: "https://github.com/Malakabdelhamid/VisionWalk",
     demo: "/vision.mp4",
-    tech: ["Python", "YOLOv5", "OpenCV", "TensorFlow"],
+    tech: ["Python", "YOLOv5", "Caltech Pedestrian Dataset"],
   },
   {
-    title: "Sign Language Translator",
+    title: "Smart Gloves for Sign Language Translation",
     description:
-      "Smart gloves powered by ML that translate sign language into text using flex sensors and ESP32.",
+      "Wearable sign language translation system using Random Forest and sensor integration. Reported results: 87% translation accuracy and a 20% reduction in error rate.",
     github: "https://github.com/Malakabdelhamid/Sign-Language-Translator",
     demo: "/gloves.mp4",
-    tech: ["Python", "Random Forest", "ESP32", "Flutter"],
-  },
-  {
-    title: "Heart Disease Prediction",
-    description: "ML model predicting heart disease risk from patient medical data.",
-    github: "https://github.com/Malakabdelhamid/Heart-Disease-Prediction",
-    tech: ["Python", "Scikit-Learn", "Pandas"],
-  },
-  {
-    title: "Earthquake Prediction",
-    description: "ML model for earthquake prediction and seismic data analysis.",
-    github: "https://github.com/Malakabdelhamid/Earthquake-Prediction",
-    tech: ["Python", "Machine Learning", "Pandas", "NumPy"],
+    tech: ["Python", "Random Forest", "Sensor Integration"],
   },
 ];
 
 export default defineTool({
   name: "get_projects",
   title: "Get projects",
-  description: "Returns Malak's featured portfolio projects with descriptions and demo links.",
+  description: "Returns Malak's featured portfolio projects with descriptions, results, and links.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({
