@@ -3,20 +3,19 @@ import { Award } from "lucide-react";
 
 const certificates = [
   {
-    title: "Microsoft Machine Learning Engineer",
-    issuer: "Digital Egypt Pioneers Program",
+    title: "Applied Deep Learning",
+    issuer: "MaharaTech",
+    date: "Jun 2025",
   },
   {
     title: "AI & Machine Learning with Quantum Computing Foundations",
-    issuer: "Youth Technology Academy · Huawei",
+    issuer: "Ministry of Youth & Sports · YTA & Huawei",
+    date: "Mar 2025",
   },
   {
-    title: "Applied Deep Learning",
-    issuer: "MaharaTech",
-  },
-  {
-    title: "AI & Business Training Program",
+    title: "AI and Business Training Program",
     issuer: "Commercial International Bank (CIB)",
+    date: "Sep 2024 – Oct 2024",
   },
 ];
 
@@ -26,7 +25,7 @@ const Certificates = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Certificates
+            Certificates &amp; Courses
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Continuous learning across AI, ML, and applied engineering
@@ -47,6 +46,7 @@ const Certificates = () => {
                   {c.title}
                 </h3>
                 <p className="text-sm text-muted-foreground mt-1">{c.issuer}</p>
+                <p className="text-xs text-muted-foreground mt-1">{c.date}</p>
               </div>
             </Card>
           ))}

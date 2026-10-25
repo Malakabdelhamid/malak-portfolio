@@ -1,38 +1,48 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, Building2 } from "lucide-react";
+import { Briefcase, Building2, GraduationCap } from "lucide-react";
 
 const experiences = [
   {
-    org: "Digital Egypt Pioneers Initiative (DEPI)",
+    org: "Digital Egypt Pioneers Initiative (MCIT)",
     role: "Machine Learning Intern",
     period: "Jun 2025 – Dec 2025",
     icon: Briefcase,
     accent: "primary" as const,
-    heading: "Responsibilities",
+    heading: "Highlights",
     items: [
-      "Machine Learning",
-      "Data Processing",
-      "Model Development",
-      "Technical Labs",
-      "Professional English",
-      "Soft Skills",
-      "Freelancing",
+      "Selected for a national internship program focused on Machine Learning and future digital skills",
+      "Hands-on technical labs in machine learning and data processing",
+      "Sessions on soft skills, freelancing, and professional English communication",
     ],
   },
   {
     org: "Commercial International Bank (CIB)",
-    role: "AI & Business Training Program",
+    role: "AI and Business Training Program",
     period: "Sep 2024 – Oct 2024",
     icon: Building2,
     accent: "accent" as const,
-    heading: "Topics",
+    heading: "Completed Certified Training",
     items: [
-      "Digital Transformation",
-      "Data Literacy",
-      "Financial Literacy",
-      "Entrepreneurial Skills",
-      "Human-Centric Skills",
+      "Digital Transformation & Data Literacy",
+      "Financial Literacy & Entrepreneurial Skills",
+      "Human-Centric Interpersonal Skills",
+      "Emerging Talent for the Future Workplace",
+    ],
+  },
+  {
+    org: "Helwan International Technological University",
+    role: "Bachelor of Technology in Artificial Intelligence",
+    period: "2022 – 2026",
+    icon: GraduationCap,
+    accent: "primary" as const,
+    heading: "Focus",
+    items: [
+      "Machine Learning",
+      "Deep Learning",
+      "Computer Vision",
+      "Natural Language Processing",
+      "Graduation Project: EyeSpeak (AI-Based Eye Tracking)",
     ],
   },
 ];
@@ -43,10 +53,10 @@ const Experience = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Experience
+            Experience &amp; Education
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Hands-on programs and roles shaping my AI engineering practice
+            Hands-on programs, training, and academic background shaping my AI engineering practice
           </p>
         </div>
 
