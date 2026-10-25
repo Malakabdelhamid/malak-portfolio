@@ -4,10 +4,10 @@ import {
   Code2,
   Brain,
   Server,
-  Database,
-  Library,
+  Eye,
+  MessageSquare,
+  Bot,
   Wrench,
-  Users,
 } from "lucide-react";
 
 const Skills = () => {
@@ -15,37 +15,37 @@ const Skills = () => {
     {
       title: "Programming",
       icon: Code2,
-      items: ["Python", "Java"],
+      items: ["Python"],
     },
     {
-      title: "Artificial Intelligence",
+      title: "Machine Learning",
       icon: Brain,
-      items: ["Machine Learning", "Deep Learning", "Computer Vision", "Natural Language Processing"],
+      items: ["Scikit-learn", "NumPy", "Pandas", "Feature Engineering", "Model Training and Evaluation"],
     },
     {
-      title: "Backend",
-      icon: Server,
-      items: ["FastAPI", "REST APIs"],
+      title: "Deep Learning",
+      icon: Brain,
+      items: ["PyTorch", "TensorFlow", "CNNs"],
     },
     {
-      title: "Database",
-      icon: Database,
-      items: ["SQL", "MySQL"],
+      title: "Computer Vision",
+      icon: Eye,
+      items: ["OpenCV", "YOLO", "Image Processing"],
     },
     {
-      title: "Libraries",
-      icon: Library,
-      items: ["TensorFlow", "Keras", "OpenCV", "Scikit-Learn", "Pandas", "NumPy", "YOLOv5"],
+      title: "NLP and Generative AI",
+      icon: MessageSquare,
+      items: ["NLP", "LLMs", "Prompt Engineering", "RAG", "LangChain", "Hugging Face Transformers"],
+    },
+    {
+      title: "AI Agents and Backend",
+      icon: Bot,
+      items: ["AI Agents", "Tool Calling", "Multi-Agent Systems", "FastAPI", "Model Inference", "Model Deployment"],
     },
     {
       title: "Tools",
       icon: Wrench,
-      items: ["Git", "GitHub", "VS Code", "Raspberry Pi", "Microsoft Office"],
-    },
-    {
-      title: "Soft Skills",
-      icon: Users,
-      items: ["Communication", "Teamwork", "Fast Learner", "Flexible & Adaptable"],
+      items: ["Git", "GitHub", "Jupyter Notebook"],
     },
   ];
 
@@ -54,10 +54,11 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Skills &amp; Expertise
+            Technical Skills
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A focused toolkit spanning AI, backend, data, and modern engineering tooling
+            A focused toolkit spanning Machine Learning, Deep Learning, Computer Vision,
+            Generative AI, and AI engineering
           </p>
         </div>
 
