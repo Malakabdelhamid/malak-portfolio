@@ -61,7 +61,7 @@ const Navigation = () => {
               size="sm" 
               className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground ml-4"
             >
-              <a href="/Resume_Malak_AbdElHamid.pdf" download="Resume_Malak_AbdElHamid.pdf">
+              <a href="/Resume_Malak_Mohamed.pdf" download="Resume_Malak_Mohamed.pdf">
                 <Download className="w-4 h-4 mr-2" />
                 CV
               </a>
@@ -94,7 +94,7 @@ const Navigation = () => {
                 size="sm" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground w-full mt-4"
               >
-                <a href="/Resume_Malak_AbdElHamid.pdf" download="Resume_Malak_AbdElHamid.pdf">
+                <a href="/Resume_Malak_Mohamed.pdf" download="Resume_Malak_Mohamed.pdf">
                   <Download className="w-4 h-4 mr-2" />
                   Download CV
                 </a>
