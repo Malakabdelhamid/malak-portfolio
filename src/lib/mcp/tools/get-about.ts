@@ -1,17 +1,19 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 
-const about = `Malak Abd-ElHamid — Artificial Intelligence Graduate from Helwan International Technological University (HITU), 2022–2026.
+const about = `Malak Mohamed Abd-ElHamid — Junior AI Engineer and Artificial Intelligence graduate from Helwan International Technological University (2022–2026).
 
-Focused on Machine Learning, Computer Vision, and NLP with hands-on experience building end-to-end AI applications. Featured projects include EyeSpeak (AI-powered eye tracking on Raspberry Pi), VisionWalk (YOLOv5 pedestrian detection), and Calibra8 (industrial LLM chatbot with FastAPI and MySQL).
+Hands-on experience in Machine Learning, Deep Learning, Computer Vision, and NLP. Interested in building AI-powered applications using LLMs, RAG, and AI agents.
 
-Currently a Machine Learning Intern at the Digital Egypt Pioneers Initiative (DEPI), with prior AI & Business training at Commercial International Bank (CIB).
+Experience: Machine Learning Intern at the Digital Egypt Pioneers Initiative (MCIT), Jun 2025 – Dec 2025. AI & Business Training Program at Commercial International Bank (CIB), Sep 2024 – Oct 2024.
 
-Core stack: Python, FastAPI, TensorFlow, Keras, OpenCV, Scikit-Learn, Pandas, NumPy, YOLOv5, MySQL.`;
+Featured projects: EyeSpeak (AI-based eye tracking, 87% gaze estimation accuracy), VisionWalk (real-time pedestrian detection with YOLOv5, 80% detection accuracy), and Smart Gloves for Sign Language Translation (87% translation accuracy, 20% error rate reduction).
+
+Core stack: Python, FastAPI, PyTorch, TensorFlow, Scikit-learn, OpenCV, YOLO, LangChain, Hugging Face Transformers, NumPy, Pandas.`;
 
 export default defineTool({
   name: "get_about",
   title: "Get about / bio",
-  description: "Returns a short biography and professional summary for Malak Mohamed.",
+  description: "Returns a short biography and professional summary for Malak Mohamed Abd-ElHamid.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({ content: [{ type: "text", text: about }] }),

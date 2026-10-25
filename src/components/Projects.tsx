@@ -9,81 +9,45 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "EyeSpeak",
+      title: "EyeSpeak — AI-Based Eye Tracking System",
       description:
-        "AI-powered eye tracking system enabling hands-free interaction using Computer Vision and Machine Learning. Optimized to run on Raspberry Pi Zero 2 W and integrated with Android and IoT devices.",
-      category: "AI",
-      tech: ["Python", "OpenCV", "Random Forest", "Raspberry Pi Zero 2 W", "Android", "IoT"],
-      image: "/3.jpg",
+        "Developed an AI-powered eye tracking system for hands-free interaction using Computer Vision and Machine Learning, integrated with Android and IoT devices and optimized to run on Raspberry Pi Zero 2 W.",
+      category: "Computer Vision",
+      tech: ["Python", "OpenCV", "Random Forest", "Raspberry Pi", "Android", "IoT"],
+      image: "/3.jpeg",
       github: "https://github.com/Malakabdelhamid/EyeSpeak",
       demo: "",
-      result: "Achieved 87% gaze estimation accuracy.",
+      result: "Reported result: 87% gaze estimation accuracy.",
       featured: true,
       badge: "Graduation Project",
     },
     {
-      title: "Calibra8 AI Chatbot",
+      title: "VisionWalk — Real-Time Pedestrian Detection",
       description:
-        "Industrial AI chatbot combining LLMs, semantic search, engineering question answering, product search, and AI-assisted recommendations.",
-      category: "AI",
-      tech: ["Python", "FastAPI", "Ollama", "MySQL", "LLMs"],
-      image: "",
-      github: "https://github.com/Malakabdelhamid",
-      demo: "",
-      result: "",
-      featured: false,
-    },
-    {
-      title: "VisionWalk",
-      description:
-        "Real-time pedestrian detection system using YOLOv5 and OpenCV trained on the Caltech Pedestrian Dataset.",
+        "Developed a real-time pedestrian detection system using YOLOv5 and Python, trained and evaluated on the Caltech Pedestrian Dataset.",
       category: "Computer Vision",
-      tech: ["Python", "YOLOv5", "OpenCV", "TensorFlow"],
+      tech: ["Python", "YOLOv5", "Caltech Pedestrian Dataset"],
       image: "/1.jpg",
       github: "https://github.com/Malakabdelhamid/VisionWalk",
       demo: "/vision.mp4",
-      result: "Achieved 80% detection accuracy.",
+      result: "Reported result: 80% detection accuracy in practical testing.",
       featured: false,
     },
     {
-      title: "Sign Language Translator",
+      title: "Smart Gloves for Sign Language Translation",
       description:
-        "Smart gloves powered by Machine Learning that translate sign language into text using flex sensors and ESP32.",
+        "Developed a wearable sign language translation system using Random Forest and sensor integration.",
       category: "IoT",
-      tech: ["Python", "Random Forest", "ESP32", "Flutter"],
+      tech: ["Python", "Random Forest", "Sensor Integration"],
       image: "/gloves.jpg",
       github: "https://github.com/Malakabdelhamid/Sign-Language-Translator",
       demo: "/gloves.mp4",
-      result: "",
-      featured: false,
-    },
-    {
-      title: "Heart Disease Prediction",
-      description:
-        "Machine Learning model that predicts heart disease risk using patient medical data.",
-      category: "ML",
-      tech: ["Python", "Scikit-Learn", "Pandas", "NumPy"],
-      image: "",
-      github: "https://github.com/Malakabdelhamid/Heart-Disease-Prediction",
-      demo: "",
-      result: "",
-      featured: false,
-    },
-    {
-      title: "Earthquake Prediction",
-      description:
-        "Machine Learning model for earthquake prediction and seismic data analysis.",
-      category: "ML",
-      tech: ["Python", "Machine Learning", "Pandas", "NumPy"],
-      image: "",
-      github: "https://github.com/Malakabdelhamid/Earthquake-Prediction",
-      demo: "",
-      result: "",
+      result: "Reported results: 87% translation accuracy and a 20% reduction in error rate.",
       featured: false,
     },
   ];
 
-  const categories = ["All", "AI", "Computer Vision", "ML", "IoT"];
+  const categories = ["All", "Computer Vision", "IoT"];
   const filteredProjects =
     filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
@@ -95,7 +59,7 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            End-to-end AI projects spanning Computer Vision, NLP, Machine Learning, and IoT
+            End-to-end AI projects spanning Computer Vision, Machine Learning, and IoT
           </p>
         </div>
 
@@ -142,7 +106,7 @@ const Projects = () => {
                   )}
                   <div className="absolute inset-0 bg-gradient-hero opacity-20"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-primary font-semibold text-lg">{project.title}</div>
+                    <div className="text-primary font-semibold text-lg text-center px-4">{project.title}</div>
                   </div>
                   {(project as any).badge && (
                     <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground">
@@ -213,7 +177,7 @@ const Projects = () => {
               Interested in Collaborating?
             </h3>
             <p className="text-muted-foreground mb-6 max-w-md">
-              I'm always excited to work on innovative projects that make a positive impact.
+              I'm always excited to work on innovative AI projects that make a positive impact.
             </p>
             <Button
               asChild

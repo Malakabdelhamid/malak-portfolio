@@ -10,6 +10,7 @@ import {
   MapPin,
   Send,
   MessageCircle,
+  Download,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -64,10 +65,10 @@ const Contact = () => {
                 Let's Connect
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                I'm always interested in discussing new opportunities, innovative projects,
-                or simply connecting with fellow tech enthusiasts. Whether you're a
-                recruiter, collaborator, or someone who shares my passion for AI and data science,
-                I'd love to hear from you.
+                I'm always interested in Junior AI Engineer roles, AI engineering internships,
+                and collaborations on AI-powered products — especially in HealthTech.
+                Whether you're a recruiter, collaborator, or someone who shares my passion
+                for AI, I'd love to hear from you.
               </p>
             </div>
 
@@ -92,7 +93,7 @@ const Contact = () => {
 
               {/* LinkedIn card */}
               <a
-                href="https://www.linkedin.com/in/malakabdelhamid1/"
+                href="https://linkedin.com/in/malakabdelhamid1/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -155,13 +156,13 @@ const Contact = () => {
 
               {/* Resume card */}
               <a
-                href="/Resume_Malak_AbdElHamid.pdf"
-                download="Resume_Malak_AbdElHamid.pdf"
+                href="/Resume_Malak_Mohamed.pdf"
+                download="Resume_Malak_Mohamed.pdf"
               >
                 <Card className="p-6 hover-lift bg-gradient-card border-0 shadow-soft group">
                   <div className="flex items-center space-x-4">
                     <div className="p-3 bg-primary-soft rounded-lg group-hover:scale-110 transition-transform">
-                      <Mail className="w-6 h-6 text-primary" />
+                      <Download className="w-6 h-6 text-primary" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground">Resume</h4>

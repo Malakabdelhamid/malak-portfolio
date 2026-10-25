@@ -13,11 +13,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div className="space-y-4">
             <h3 className="text-xl font-bold gradient-text">
-              Malak Abd-ElHamid
+              Malak Mohamed Abd-ElHamid
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Artificial Intelligence Graduate building AI-powered applications
-              across Machine Learning, Computer Vision, and NLP.
+              Junior AI Engineer building AI-powered applications
+              across Machine Learning, Computer Vision, NLP, and Generative AI.
             </p>
           </div>
 
@@ -81,10 +81,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border">
           <div className="text-muted-foreground mb-4 md:mb-0 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-1">
-              <span>© 2026 Malak Abd-ElHamid</span>
+              <span>© 2026 Malak Mohamed Abd-ElHamid</span>
               <Heart className="w-4 h-4 text-red-500 fill-current" />
             </div>
-            <div className="text-sm">Artificial Intelligence Graduate</div>
+            <div className="text-sm">Junior AI Engineer | Machine Learning | Generative AI</div>
             <div className="text-xs mt-1">Built with React, Tailwind CSS, and Lovable.</div>
           </div>
 

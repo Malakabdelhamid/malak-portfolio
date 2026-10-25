@@ -2,9 +2,9 @@ import { defineTool } from "@lovable.dev/mcp-js";
 
 const contact = {
   email: "malakabdelhamid6@gmail.com",
-  linkedin: "https://www.linkedin.com/in/malakabdelhamid1/",
+  linkedin: "https://linkedin.com/in/malakabdelhamid1/",
   github: "https://github.com/Malakabdelhamid",
-  portfolio: "https://malak-portfolio-five.vercel.app/",
+  cv: "/Resume_Malak_Mohamed.pdf",
 };
 
 export default defineTool({

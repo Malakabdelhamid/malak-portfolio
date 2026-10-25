@@ -8,19 +8,20 @@ const Hero = () => {
         <div className="space-y-8">
           <div className="space-y-4">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
-              <span className="gradient-text">Malak Abd-ElHamid</span>
+              <span className="gradient-text">Malak Mohamed Abd-ElHamid</span>
             </h1>
             <div className="text-xl sm:text-2xl text-foreground/90 font-semibold">
-              Artificial Intelligence Graduate
+              Junior AI Engineer | Machine Learning | Generative AI
             </div>
             <div className="text-base sm:text-lg text-muted-foreground font-medium">
-              Machine Learning &nbsp;|&nbsp; Computer Vision &nbsp;|&nbsp; NLP &nbsp;|&nbsp; Python
+              Deep Learning &nbsp;|&nbsp; Computer Vision &nbsp;|&nbsp; NLP &nbsp;|&nbsp; LLMs &amp; AI Agents
             </div>
           </div>
 
           <p className="text-lg sm:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
-            Building AI-powered applications with hands-on experience in Machine Learning,
-            Computer Vision, Natural Language Processing, and AI Backend Development.
+            Artificial Intelligence graduate with hands-on experience in Machine Learning,
+            Deep Learning, Computer Vision, and NLP. Interested in building AI-powered
+            applications using LLMs, RAG, and AI agents.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
@@ -29,9 +30,9 @@ const Hero = () => {
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg font-medium group"
             >
-              <a href="/Resume_Malak_AbdElHamid.pdf" download="Resume_Malak_AbdElHamid.pdf">
+              <a href="/Resume_Malak_Mohamed.pdf" download="Resume_Malak_Mohamed.pdf">
                 <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                Download CV
+                Download My CV
               </a>
             </Button>
             <Button
@@ -41,7 +42,7 @@ const Hero = () => {
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <FolderGit2 className="w-5 h-5 mr-2" />
-              View Projects
+              View My Projects
             </Button>
           </div>
 

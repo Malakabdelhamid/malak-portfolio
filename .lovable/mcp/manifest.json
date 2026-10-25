@@ -15,7 +15,7 @@
       {
         "name": "get_about",
         "title": "Get about / bio",
-        "description": "Returns a short biography and professional summary for Malak Mohamed.",
+        "description": "Returns a short biography and professional summary for Malak Mohamed Abd-ElHamid.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -31,7 +31,7 @@
       {
         "name": "get_skills",
         "title": "Get skills",
-        "description": "Returns Malak's technical skills (with proficiency levels) and soft skills.",
+        "description": "Returns Malak's technical skills and soft skills.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -47,7 +47,7 @@
       {
         "name": "get_projects",
         "title": "Get projects",
-        "description": "Returns Malak's featured portfolio projects with descriptions and demo links.",
+        "description": "Returns Malak's featured portfolio projects with descriptions, results, and links.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,

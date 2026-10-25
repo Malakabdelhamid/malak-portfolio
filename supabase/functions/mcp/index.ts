@@ -7,17 +7,19 @@ import { defineMcp } from "npm:@lovable.dev/mcp-js@0.24.0";
 
 // src/lib/mcp/tools/get-about.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.24.0";
-var about = `Malak Abd-ElHamid \u2014 Artificial Intelligence Graduate from Helwan International Technological University (HITU), 2022\u20132026.
+var about = `Malak Mohamed Abd-ElHamid \u2014 Junior AI Engineer and Artificial Intelligence graduate from Helwan International Technological University (2022\u20132026).
 
-Focused on Machine Learning, Computer Vision, and NLP with hands-on experience building end-to-end AI applications. Featured projects include EyeSpeak (AI-powered eye tracking on Raspberry Pi), VisionWalk (YOLOv5 pedestrian detection), and Calibra8 (industrial LLM chatbot with FastAPI and MySQL).
+Hands-on experience in Machine Learning, Deep Learning, Computer Vision, and NLP. Interested in building AI-powered applications using LLMs, RAG, and AI agents.
 
-Currently a Machine Learning Intern at the Digital Egypt Pioneers Initiative (DEPI), with prior AI & Business training at Commercial International Bank (CIB).
+Experience: Machine Learning Intern at the Digital Egypt Pioneers Initiative (MCIT), Jun 2025 \u2013 Dec 2025. AI & Business Training Program at Commercial International Bank (CIB), Sep 2024 \u2013 Oct 2024.
 
-Core stack: Python, FastAPI, TensorFlow, Keras, OpenCV, Scikit-Learn, Pandas, NumPy, YOLOv5, MySQL.`;
+Featured projects: EyeSpeak (AI-based eye tracking, 87% gaze estimation accuracy), VisionWalk (real-time pedestrian detection with YOLOv5, 80% detection accuracy), and Smart Gloves for Sign Language Translation (87% translation accuracy, 20% error rate reduction).
+
+Core stack: Python, FastAPI, PyTorch, TensorFlow, Scikit-learn, OpenCV, YOLO, LangChain, Hugging Face Transformers, NumPy, Pandas.`;
 var get_about_default = defineTool({
   name: "get_about",
   title: "Get about / bio",
-  description: "Returns a short biography and professional summary for Malak Mohamed.",
+  description: "Returns a short biography and professional summary for Malak Mohamed Abd-ElHamid.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({ content: [{ type: "text", text: about }] })
@@ -26,18 +28,19 @@ var get_about_default = defineTool({
 // src/lib/mcp/tools/get-skills.ts
 import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.24.0";
 var categories = {
-  programming: ["Python", "Java"],
-  ai: ["Machine Learning", "Deep Learning", "Computer Vision", "Natural Language Processing"],
-  backend: ["FastAPI", "REST APIs"],
-  database: ["SQL", "MySQL"],
-  libraries: ["TensorFlow", "Keras", "OpenCV", "Scikit-Learn", "Pandas", "NumPy", "YOLOv5"],
-  tools: ["Git", "GitHub", "VS Code", "Raspberry Pi", "Microsoft Office"]
+  programming: ["Python"],
+  machineLearning: ["Scikit-learn", "NumPy", "Pandas", "Feature Engineering", "Model Training and Evaluation"],
+  deepLearning: ["PyTorch", "TensorFlow", "CNNs"],
+  computerVision: ["OpenCV", "YOLO", "Image Processing"],
+  nlpAndGenerativeAI: ["NLP", "LLMs", "Prompt Engineering", "RAG", "LangChain", "Hugging Face Transformers"],
+  aiAgentsAndBackend: ["AI Agents", "Tool Calling", "Multi-Agent Systems", "FastAPI", "Model Inference", "Model Deployment"],
+  tools: ["Git", "GitHub", "Jupyter Notebook"]
 };
 var soft = ["Communication", "Teamwork", "Fast Learner", "Flexible and Adaptable"];
 var get_skills_default = defineTool2({
   name: "get_skills",
   title: "Get skills",
-  description: "Returns Malak's technical skills (with proficiency levels) and soft skills.",
+  description: "Returns Malak's technical skills and soft skills.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
@@ -54,47 +57,30 @@ var get_skills_default = defineTool2({
 import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.24.0";
 var projects = [
   {
-    title: "EyeSpeak",
-    description: "AI-powered eye tracking system for hands-free interaction using Computer Vision and Machine Learning on Raspberry Pi Zero 2 W. Achieved 87% gaze estimation accuracy.",
+    title: "EyeSpeak \u2014 AI-Based Eye Tracking System",
+    description: "AI-powered eye tracking system for hands-free interaction using Computer Vision and Machine Learning, integrated with Android and IoT devices on Raspberry Pi Zero 2 W. Reported result: 87% gaze estimation accuracy.",
     github: "https://github.com/Malakabdelhamid/EyeSpeak",
     tech: ["Python", "OpenCV", "Random Forest", "Raspberry Pi", "Android", "IoT"]
   },
   {
-    title: "Calibra8 AI Chatbot",
-    description: "Industrial AI chatbot combining LLMs, semantic search, and product recommendations built with FastAPI, Ollama, and MySQL.",
-    tech: ["Python", "FastAPI", "Ollama", "MySQL", "LLMs"]
-  },
-  {
-    title: "VisionWalk",
-    description: "Real-time pedestrian detection using YOLOv5 and OpenCV trained on the Caltech Pedestrian Dataset. Achieved 80% accuracy.",
+    title: "VisionWalk \u2014 Real-Time Pedestrian Detection",
+    description: "Real-time pedestrian detection system developed with YOLOv5 and Python, trained on the Caltech Pedestrian Dataset. Reported result: 80% detection accuracy in practical testing.",
     github: "https://github.com/Malakabdelhamid/VisionWalk",
     demo: "/vision.mp4",
-    tech: ["Python", "YOLOv5", "OpenCV", "TensorFlow"]
+    tech: ["Python", "YOLOv5", "Caltech Pedestrian Dataset"]
   },
   {
-    title: "Sign Language Translator",
-    description: "Smart gloves powered by ML that translate sign language into text using flex sensors and ESP32.",
+    title: "Smart Gloves for Sign Language Translation",
+    description: "Wearable sign language translation system using Random Forest and sensor integration. Reported results: 87% translation accuracy and a 20% reduction in error rate.",
     github: "https://github.com/Malakabdelhamid/Sign-Language-Translator",
     demo: "/gloves.mp4",
-    tech: ["Python", "Random Forest", "ESP32", "Flutter"]
-  },
-  {
-    title: "Heart Disease Prediction",
-    description: "ML model predicting heart disease risk from patient medical data.",
-    github: "https://github.com/Malakabdelhamid/Heart-Disease-Prediction",
-    tech: ["Python", "Scikit-Learn", "Pandas"]
-  },
-  {
-    title: "Earthquake Prediction",
-    description: "ML model for earthquake prediction and seismic data analysis.",
-    github: "https://github.com/Malakabdelhamid/Earthquake-Prediction",
-    tech: ["Python", "Machine Learning", "Pandas", "NumPy"]
+    tech: ["Python", "Random Forest", "Sensor Integration"]
   }
 ];
 var get_projects_default = defineTool3({
   name: "get_projects",
   title: "Get projects",
-  description: "Returns Malak's featured portfolio projects with descriptions and demo links.",
+  description: "Returns Malak's featured portfolio projects with descriptions, results, and links.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({
@@ -118,9 +104,9 @@ Demo: ${p.demo}` : "")
 import { defineTool as defineTool4 } from "npm:@lovable.dev/mcp-js@0.24.0";
 var contact = {
   email: "malakabdelhamid6@gmail.com",
-  linkedin: "https://www.linkedin.com/in/malakabdelhamid1/",
+  linkedin: "https://linkedin.com/in/malakabdelhamid1/",
   github: "https://github.com/Malakabdelhamid",
-  portfolio: "https://malak-portfolio-five.vercel.app/"
+  cv: "/Resume_Malak_Mohamed.pdf"
 };
 var get_contact_default = defineTool4({
   name: "get_contact",
