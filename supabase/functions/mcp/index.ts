@@ -111,7 +111,7 @@ var contact = {
 var get_contact_default = defineTool4({
   name: "get_contact",
   title: "Get contact info",
-  description: "Returns Malak's public contact details: email, LinkedIn, and GitHub.",
+  description: "Returns Malak's public contact details: email, LinkedIn, GitHub, and CV.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({
@@ -121,7 +121,7 @@ var get_contact_default = defineTool4({
         text: `Email: ${contact.email}
 LinkedIn: ${contact.linkedin}
 GitHub: ${contact.github}
-Portfolio: ${contact.portfolio}`
+CV: ${contact.cv}`
       }
     ],
     structuredContent: contact
