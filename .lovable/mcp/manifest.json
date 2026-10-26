@@ -63,7 +63,7 @@
       {
         "name": "get_contact",
         "title": "Get contact info",
-        "description": "Returns Malak's public contact details: email, LinkedIn, and GitHub.",
+        "description": "Returns Malak's public contact details: email, LinkedIn, GitHub, and CV.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,

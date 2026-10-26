@@ -10,14 +10,14 @@ const contact = {
 export default defineTool({
   name: "get_contact",
   title: "Get contact info",
-  description: "Returns Malak's public contact details: email, LinkedIn, and GitHub.",
+  description: "Returns Malak's public contact details: email, LinkedIn, GitHub, and CV.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({
     content: [
       {
         type: "text",
-        text: `Email: ${contact.email}\nLinkedIn: ${contact.linkedin}\nGitHub: ${contact.github}\nPortfolio: ${contact.portfolio}`,
+        text: `Email: ${contact.email}\nLinkedIn: ${contact.linkedin}\nGitHub: ${contact.github}\nCV: ${contact.cv}`,
       },
     ],
     structuredContent: contact,
